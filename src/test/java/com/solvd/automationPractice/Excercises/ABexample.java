@@ -1,6 +1,6 @@
 package com.solvd.automationPractice.Excercises;
 
-import com.solvd.automationPractice.LoginPage;
+import com.solvd.automationPractice.Excercises.PageObjects.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;

@@ -2,6 +2,7 @@ package com.solvd.automationPractice.Excercises.PageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -24,7 +25,7 @@ public class PageObject {
     @FindBy(id = "result")
     private WebElement errorMessageLabel;
 
-    public void clickLink(){
+    public void clickKeyPress(){
         keyPressLink.click();
     }
 
@@ -37,4 +38,62 @@ public class PageObject {
     }
 
     /*Finish Attritubes and methods for KeyPress*/
+
+    /*Start Attritubes and methods for Sliders*/
+
+
+    @FindBy(linkText = "Horizontal Slider")
+    private WebElement sliderLink;
+
+    @FindBy(xpath= "//input [@type = 'range']")
+    private WebElement sliderClassName;
+
+    public void clickSliderLink(){
+        sliderLink.click();
+    }
+
+    public void moveSlider(int x, int y){
+        Actions actions = new Actions(webDriver);
+
+        if (x == 0 && y == 0){
+            x = -60;
+            y = 0;
+        }else if(x == 0 && y == 5){
+            x = -50;
+            y = 0;
+        }else if(x == 1 && y == 0){
+            x = -30;
+            y = 0;
+        }else if(x == 1 && y == 5){
+            x = -20;
+            y = 0;
+        }else if(x == 2 && y == 0){
+            x = -10;
+            y = 0;
+        }else if(x == 2 && y == 5){
+            x = 5;
+            y = 0;
+        }else if(x == 3 && y == 0){
+            x = 15;
+            y = 0;
+        }else if(x == 3 && y == 5){
+            x = 20;
+            y = 0;
+        }else if(x == 4 && y == 0){
+            x = 30;
+            y = 0;
+        }else if(x == 4 && y == 5){
+            x = 50;
+            y = 0;
+        }else if(x == 5 && y == 0){
+            x = 60;
+            y = 0;
+        }else{
+            x = -60;
+        }
+        actions.dragAndDropBy(sliderClassName, x, y ).perform();
+
+    }
+
+
 }
