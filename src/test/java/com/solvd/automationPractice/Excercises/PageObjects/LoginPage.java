@@ -1,4 +1,4 @@
-package com.solvd.automationPractice;
+package com.solvd.automationPractice.Excercises;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
